@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#content {
+    min-height: 80vh;
+}
+
+.image img {
+    transform-origin: center;
+    transform: perspective(800px) rotateY(20deg);
+    transition: 0.5s;
+    -webkit-box-reflect: below 12px
+        linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.3));
+}
+
+.image:hover img {
+    opacity: 0.1;
+}
+
+.image img:hover {
+    transform: perspective(800px) rotateY(0deg);
+    opacity: 1;
+}
