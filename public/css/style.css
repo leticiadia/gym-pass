@@ -1,19 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-#content {
-    min-height: 80vh;
+html {
+    height: 100%;
+}
+
+html,
+body {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #27272a;
+    font-family: "Poppins", sans-serif;
+}
+
+nav {
+    padding: 2.4rem;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 3.2rem;
+    background-image: -webkit-linear-gradient(132deg, #ec4899, #7e22ce);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main {
+    flex: 1;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 76vh;
+    padding: 2.4rem;
+}
+
+section .content-left .title span {
+    font-size: 6.4rem;
+    background-image: -webkit-linear-gradient(132deg, #ec4899, #7e22ce);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section .content-left .description {
+    width: 64%;
+}
+
+section .content-left .description p {
+    font-size: 1.6rem;
+    color: #fff;
+
+    margin: 1.6rem 0;
+    text-align: justify;
+}
+
+section .content-left .button a {
+    padding: 0.8rem 1.6rem;
+
+    border: 2px solid #a855f7;
+    border-radius: 0.2rem;
+
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #7e22ce;
+
+    background: none;
+    cursor: pointer;
+}
+
+section .content-left .button a:hover {
+    background-color: #a855f7;
+    color: #fff;
+}
+
+.image {
+    display: flex;
 }
 
 .image img {
+    width: 200px;
+    height: 200px;
+
     transform-origin: center;
     transform: perspective(800px) rotateY(20deg);
     transition: 0.5s;
     -webkit-box-reflect: below 12px
         linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.3));
+
+    border: 8px solid;
+    border-radius: 0.8rem;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #7e22ce, #ec4899);
 }
 
 .image:hover img {
@@ -23,4 +115,58 @@
 .image img:hover {
     transform: perspective(800px) rotateY(0deg);
     opacity: 1;
+}
+
+footer {
+    padding: 0.8rem;
+}
+
+footer p {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (max-width: 60vh) {
+    section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section .content-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3.2rem;
+    }
+
+    section .content-left .title span {
+        font-size: 12rem;
+    }
+
+    section .content-left .description {
+        min-width: 64vw;
+    }
+
+    section .content-left .description p {
+        margin: 2.4rem 0;
+        font-size: 2.4rem;
+        text-align: center;
+    }
+
+    section .content-left .button a {
+        padding: 2.4rem 3.2rem;
+        font-size: 3.2rem;
+        border: 4px solid #a855f7;
+    }
+
+    .image {
+        margin-top: 3.2rem;
+    }
+
+    .image img {
+        width: 240px;
+        height: 240px;
+    }
 }
