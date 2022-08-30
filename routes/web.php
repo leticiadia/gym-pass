@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SchedulingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/agendar-aula', [SchedulingController::class, 'index']);
+Route::post('/agendar-aula', [SchedulingController::class, 'store']);
